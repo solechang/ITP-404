@@ -5,8 +5,10 @@
 * Loading the jQuery library
 * Where to place your jQuery code?
 	* [DOMContentLoaded event vs onload event](https://developer.mozilla.org/en/DOM/DOM_event_reference/DOMContentLoaded)
-* DOM element selection w/ CSS selectors
-* Method chaining
+* DOM element selection
+	* native DOM methods 	
+	* jQuery object and CSS selectors
+* jQuery methods
 * Manipulating styles
 	* .css()
 		* Options with object literals
@@ -26,7 +28,13 @@
 * Selection filtering
 	* [eq()](http://api.jquery.com/eq/)
 	* first()
+	* find()
+* Method chaining
 
+##Class Demos
+* Schedule of classes
+	* DOM events, traversal, animation, css method, if statements, variables
+* Navigation initialization
 
 ##Lab 1
 Create an accordion similar to [the jQuery UI plugin](http://jqueryui.com/demos/accordion/ "accordion example") using a progressive enhancement approach. Yours will be much simpler than the plugin. Just try and get the basic functionality down. 

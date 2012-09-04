@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+		
+
+<div class="class">
+	<h3>ITP 404 - Developing Web Services and APIs</h3>
+	<div class="description">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</div>
+
+<div class="class">
+	<h3>ITP 104 - Developing Web Services and APIs</h3>
+	<div class="description">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	
+$('.class .description').hide();
+
+$('.class h3').on('click', function() {
+	var $this = $(this);
+	var $description = $this.next('.description');
+	var descriptionDisplayed = $description.css('display');
+
+	if (descriptionDisplayed === 'none') {
+		$description.slideDown(400);	
+	}
+	else {
+		$description.slideUp(400);
+	}
+});
+
+</script>
+
+</body>
+</html>
