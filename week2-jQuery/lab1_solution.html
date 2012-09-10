@@ -23,13 +23,16 @@
 		var timeout = 200;
 		var $this = $(this);
 
-		// Hide all div.content elements & show the div.content element next to the label that was clicked
-		$('.content').slideUp(timeout);
-		$this.next().slideDown(timeout);
+		// only slide down next content panel if it is hidden. In other words, if it is already showing, dont do anything
+		if ($this.next().css('display') === 'none') {
+			// Hide all div.content elements & show the div.content element next to the label that was clicked
+			$('.content').slideUp(timeout);
+			$this.next().slideDown(timeout);
 
-		// Remove the 'active' class from all div.label elements & apply the 'active' class to the clicked div.label element
-		$('.accordion .active').removeClass('active');
-		$this.addClass('active');
+			// Remove the 'active' class from all div.label elements & apply the 'active' class to the clicked div.label element
+			$('.accordion .active').removeClass('active');
+			$this.addClass('active');
+		}
 	});
 </script>
 
