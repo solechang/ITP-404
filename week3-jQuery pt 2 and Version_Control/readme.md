@@ -3,6 +3,7 @@
 ###Overview
 * lab 1 review
 * jQuery
+	* addEventListener(), event bubbling vs event capturing 
 	* the event object, e.preventDefault() 
 	* event delegation
 	* global variables & self invoking anonymous functions
@@ -79,6 +80,7 @@ See **address-book.html** and related files for class example
 
 
 ##Reading
+* [DOM events: bubbling vs capturing](http://www.quirksmode.org/js/events_order.html)
 * [FTP to Git](http://net.tutsplus.com/articles/from-ftp-to-git-a-deployment-story/)
 * [Git - The Simple Guide](http://rogerdudler.github.com/git-guide/)
 * [Pro Git](http://git-scm.com/book) - This is more of a reference book that covers everything you'd ever want to know about Git

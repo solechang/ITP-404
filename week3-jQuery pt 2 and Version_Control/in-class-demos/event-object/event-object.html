@@ -1,0 +1,16 @@
+<div id="some-div">
+	<a href="#" id="some-link">Some link</a>	
+</div>
+
+<script>
+
+document.getElementById('some-div').addEventListener('click', function(e) {
+	var evt = e || window.event;
+
+	console.log(evt.target); // W3C
+	//console.log(evt.srcElement); //IE
+	
+	e.preventDefault();
+}, false);
+
+</script>
