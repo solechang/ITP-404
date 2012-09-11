@@ -25,9 +25,9 @@
 
 ##More on jQuery
 ### Good practices
-	* prefix variables that contain jQuery objects with $
-	* self-invoking anonymous functions to prevent global variable pollution
-	* you can preserve the $ for jQuery even if other libraries use $. You can achieve this by passing jQuery to your self invoking anoymous function and remapping jQuery to $
+* prefix variables that contain jQuery objects with $
+* self-invoking anonymous functions to prevent global variable pollution
+* you can preserve the $ for jQuery even if other libraries use $. You can achieve this by passing jQuery to your self invoking anoymous function and remapping jQuery to $
 	
 ```js
 	(function($) {
@@ -35,7 +35,7 @@
 	})(jQuery);
 ```
 	
-	* cache the value of _this_ i.e. var $this = $(this); to prevent unnecessary function calls
+* cache the value of _this_ i.e. var $this = $(this); to prevent unnecessary function calls
 ###Event delegation
 
 Event delegation is a technique that allows you to avoid adding event listeners to specific nodes. For example, say you had a list of items and this list had several 100 items. Attaching an event listener to every single list item would not be very efficient. Instead, why not bind an event listener to the parent element of the list-items and then determine if one of the list items was clicked using the event object. This reduces the number of event bindings from 100 to 1. Much more efficient right? jQuery makes event delegation dead simple!
