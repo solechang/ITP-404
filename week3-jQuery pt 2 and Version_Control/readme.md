@@ -23,7 +23,7 @@
 	* GitHub 
 	* Cloud services
 
-##More on jQuery
+##JavaScript / jQuery
 ### Good practices
 * prefix variables that contain jQuery objects with $
 * self-invoking anonymous functions to prevent global variable pollution
@@ -36,11 +36,19 @@
 ```
 	
 * cache the value of _this_ i.e. var $this = $(this); to prevent unnecessary function calls
+
 ###Event delegation
 
-Event delegation is a technique that allows you to avoid adding event listeners to specific nodes. For example, say you had a list of items and this list had several 100 items. Attaching an event listener to every single list item would not be very efficient. Instead, why not bind an event listener to the parent element of the list-items and then determine if one of the list items was clicked using the event object. This reduces the number of event bindings from 100 to 1. Much more efficient right? jQuery makes event delegation dead simple!
+Event delegation is a technique that allows you to avoid adding event listeners to specific nodes. For example, say you had a list of items and this list had several 100 items. Attaching an event listener to every single list item would not be very efficient. Instead, why not bind an event listener to the parent element of the list-items and then determine if one of the list items was clicked using the event object. This reduces the number of event bindings from 100 to 1. Much more efficient right? jQuery makes event delegation dead simple with the __on()__ method.
+
+```js
+	$('ul').on('click', 'li', function() {
+		// this refers to the li element that was clicked
+	});
+```
 
 Another reason to use event delegation is when you are appending new elements to the DOM. These new elements don't have event listeners on them and you may want them.
+
 ###[jQuery UI](http://jqueryui.com/) & plugins
 
 For those new to jQuery, there are thousands of jQuery plugins available to add extended functionality to the library. Say you want a calendar widget on one of your date elements in a form. jQuery has that. Say you want a dynamic data table, jQuery has that. With only 2-3 lines of code, you could add this functionality to your site/application with hardly any effort.
@@ -54,7 +62,6 @@ The general process of incorporating a plugin into your site is the same:
 ```js
 	$('#my-data-table').dataTable()
 ```		
-
 
 ##Version Control
 
