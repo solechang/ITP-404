@@ -9,9 +9,11 @@
 	* global variables & self invoking anonymous functions
 	* library conflicts with $
 	* jQuery UI and 3rd party plugins
+* the typical website deployment process
 * Version Control concepts
 * Git
 * GitHub 
+* Cloud services
 
 ##More on jQuery
 * More on DOM traversal
@@ -40,10 +42,16 @@
 		
 
 
-See **address-book.html** and related files for class example
-
-
 ##Version Control
+
+Allows for collaboration on projects on the same file without the fear of overwriting other team members' work
+
+Serves as a timeline for your project and reasons why they changed
+
+Great for experimenting without the fear of breaking your code. You can always revert back
+
+Central Repository System vs Distributed Version Control System
+
 * Local repositories
 * Staging
 * Commits (saving to a repository)
@@ -57,14 +65,23 @@ See **address-book.html** and related files for class example
 	* ls -l
 * pwd = print working directory
 
-##Git
+##Git Distributed Version Control System
+First, you'll need to set some basic information:
+
+* git config --global user.name "David Tang"
+* git config --global user.email dtang@usc.edu
+* git config --global color.ui true
+
+####Workflow
 * Initialize a local repository: git init
-* git add --all
-* git commit -m 'some message'
+* Add files to staging area: git add --all
+* Commit changes (a snapshot of what is on the stage): git commit -m 'some message'
 * git status
 * git branch
 * git checkout
 * git merge
+
+The workflow for using Git is that you do some work, stage the changes when you've finished a particular feature, and make a commit. Then you continue to make changes, stage, and commit, and you repeat this process, creating a timeline of snapshots for your project.
 
 ##GitHub
 
