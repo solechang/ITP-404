@@ -1,0 +1,23 @@
+#search, h1 {
+	text-align: center;
+}
+
+#search input {
+	width:300px;
+}
+
+#contacts {
+	width:600px;
+	margin:0 auto;
+}
+
+.contact {
+	border:1px solid #aaa;
+	border-radius:5px;
+	padding:15px;
+	margin-top:15px;
+}
+
+.favorited {
+	background-color: yellow;
+}
