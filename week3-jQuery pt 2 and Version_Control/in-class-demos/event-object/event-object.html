@@ -4,13 +4,18 @@
 
 <script>
 
+// W3C model (Chrome, Safari, FF, Opera)
 document.getElementById('some-div').addEventListener('click', function(e) {
-	var evt = e || window.event;
-
-	console.log(evt.target); // W3C
-	//console.log(evt.srcElement); //IE
-	
+	console.log(e.target);
 	e.preventDefault();
+}, false);
+
+
+// IE
+document.getElementById('some-div').attachEvent('onclick', function() {
+	var evt = window.event;
+	console.log(evt.srcElement);
+	evt.returnValue = false;
 }, false);
 
 </script>
