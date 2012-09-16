@@ -1,0 +1,31 @@
+<script>
+	
+var validator =  {
+	checkEmail: function(email) {
+		if (email.indexOf('@') !== -1) {
+			return true;
+		} else {
+			return false;
+		}
+	},
+
+	isEmpty: function(val) {
+		if (String(val).length > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+
+
+var validEmail = validator.checkEmail('dtang@usc.edu');
+console.log(validEmail);
+
+var validName = validator.isEmpty('');
+console.log(validName);
+
+var validLastName = validator.isEmpty('Tang');
+console.log(validLastName);
+
+</script>
