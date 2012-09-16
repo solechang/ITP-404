@@ -1,0 +1,23 @@
+<div id="some-div">
+	<a href="#" id="click-me-link">Click me</a>
+</div>
+
+<script>
+
+document.getElementById('some-div').addEventListener('click', function(e) {
+	console.log(e.target);
+
+	e.preventDefault();
+}, false);
+
+
+document.getElementById('some-div').attachEvent('onclick', function() {
+	var e = window.event;
+
+	e.srcElement;
+});
+
+
+
+
+</script>
