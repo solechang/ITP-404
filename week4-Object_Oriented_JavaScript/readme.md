@@ -77,7 +77,7 @@ With object literals, you can create one-off objects. But what happens when you 
 
 ##Constructor Functions
 
-Functions can be invoked with the _new_ operator. When a function is invoked with the _new_ operator, you are creating an object instance of that constructor. In the following example, I am creating an instance of the Person constructor (or data type) and assigning it to the variable _david_. It is considered good practice to capitalize the first letter of a constructor function to differentiate it from other functions. Constructor functions that are invoked without the new operator will yield unintended results.
+Functions can be invoked with the _new_ operator. When a function is invoked with the _new_ operator, you are creating an object instance of that constructor. In the following example, I am creating an instance of the Person constructor (or data type) and assigning it to the variable _david_. It is considered good practice to capitalize the first letter of a constructor function to differentiate it from other functions, but it is not required.
 
 ```js
 	var Person = function(name) {
@@ -87,16 +87,16 @@ Functions can be invoked with the _new_ operator. When a function is invoked wit
 	var david = new Person('David');
 ```
 
-When a constructor function is invoked with the _new_ keyword, the keyword _this_ refers to the current instance that is created. If invoked without _new_, this wil point to the head object, which is the Window object in the browser.
+Constructor functions that are invoked without the new operator will yield unintended results. When a constructor function is invoked with the _new_ keyword, the keyword _this_ refers to the current instance that is created. If invoked without _new_, this will point to the head object, which is the Window object in the browser. This will endup creating global properties on the window object, and as we learned before, global variables are evil!
 
-You can give objects methods too, like below:
+You can give objects methods too, like below. The keyword _this_ within object methods refers to the current object instance.
 
 ```js
 	var Person = function(name) {
 		this.name = name;
 		
 		this.sayHello = function() {
-			alert('hello!');
+			alert('hello! my name is ' + this.name);
 		};
 	};
 	
@@ -123,8 +123,8 @@ Methods can be shared across object instances via the _prototype_ property. Obje
 	};
 	
 	var david = new Person('David');
-	david.sayHello(); hi, my name is David
-	david.sleep(); David is sleeping
+	david.sayHello(); // hi, my name is David
+	david.sleep(); // David is sleeping
 	
 	var patrick = new Person('Patrick');
 	patrick.sayHello(); // hi, my name is Patrick
