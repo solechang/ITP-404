@@ -1,0 +1,23 @@
+<script>
+	
+	// recommended to capitalize first letter in constructor functions
+	function Person(first, last) {
+		this.first = first;
+		this.last = last;
+
+		this.getFullName = function() {
+			console.log(this.first + ' ' + this.last);
+		}
+	}
+
+
+	var dt = new Person('david', 'tang');
+	console.log(dt);
+	dt.getFullName();
+
+
+	var jd = new Person('John', 'Doe');
+	console.log(jd);
+	jd.getFullName();
+
+</script>

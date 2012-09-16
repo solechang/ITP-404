@@ -1,0 +1,53 @@
+<div id="somediv">This is some div</div>
+
+<div class="moredivs">Hey there</div>
+<div class="moredivs">Hey there again</div>
+<div class="moredivs">Hey one last time</div>
+
+<script>
+
+var dQuery = function(sel) {
+	if (this instanceof dQuery) {
+		this.el = document.querySelectorAll(sel);
+		console.log(this.el);
+	} else {
+		console.log('returned with a new instance of dQuery');
+		return new dQuery(sel);
+	}
+};
+
+dQuery.prototype.css = function(prop, val) {
+	this.each(function() {
+		this.style[prop] = val;
+	});
+
+	return this;
+};
+
+dQuery.prototype.html = function(text) {
+	if (text) {
+		this.each(function() {
+			this.innerHTML = text;
+		});
+	}
+
+	return this;
+};
+
+
+dQuery.prototype.each = function(fn) {
+	for (var i = 0, len = this.el.length; i < len; i++) {
+		fn.call(this.el[i], i, this.el[i]);
+	}
+
+	return this;
+};
+
+dQuery('#somediv').css('color', 'red').css('border', '1px solid green').html('new inner html!');
+
+dQuery('.moredivs').each(function(index, el) {
+	console.log(index, el);
+	this.innerHTML = Math.floor((Math.random()*10)+1);
+});
+
+</script>

@@ -1,0 +1,37 @@
+<div id="somediv">This is some div</div>
+
+<script>
+
+var dQuery = function(sel) {
+	if (this instanceof dQuery) {
+		this.el = document.querySelectorAll(sel);
+		console.log(this.el);
+	} else {
+		console.log('returned with a new instance of dQuery');
+		return new dQuery(sel);
+	}
+};
+
+dQuery.prototype.css = function(prop, val) {
+	for (var i = 0, len = this.el.length; i < len; i++) {
+		this.el[i].style[prop] = val;
+	}
+
+	return this;
+};
+
+dQuery.prototype.html = function(text) {
+	if (text) {
+		for (var i = 0, len = this.el.length; i < len; i++) {
+			this.el[i].innerHTML = text;
+		}
+	}
+
+	return this;
+};
+
+
+dQuery('#somediv').css('color', 'red').css('border', '1px solid green').html('new inner html!');
+
+
+</script>
