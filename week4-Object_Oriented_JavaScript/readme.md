@@ -1,6 +1,7 @@
 #Object Oriented JavaScript
 
 ##Overview
+* _(review material / questions)_
 * What are objects?
 * One-off objects using object literals (singletons)
 * Object instances via constructor functions
@@ -161,4 +162,6 @@ Make sure that your widget is reusable, meaning that if you create multiple inst
 
 Lastly, namespace your widget with an application namespace.
 
-Once you have completed your constructor function, create a sample demo page with at least 2 instances.
+Once you have completed your constructor function, create a sample demo page with at least 2 instances. 
+
+__When you are finished, push off the assignment to a new repository on GitHub called ITP404-Assignment2:OOJS__
