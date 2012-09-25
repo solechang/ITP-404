@@ -1,0 +1,30 @@
+.contact {
+	display: inline-block;
+	border-radius: 5px;
+	background-color: #eee;
+	padding:15px;
+	margin: 15px;
+}
+
+.favorited-contact {
+	background-color: yellow;
+}
+
+.contact .info {
+	padding:10px 0;
+	text-align: center;
+}
+
+.contact .info h3 {
+	margin: 0;
+	padding:0;
+}
+
+.contact .info p {
+	margin:5px 0;
+	padding:0;
+}
+
+.contact .email {
+	font-style: italic;
+}

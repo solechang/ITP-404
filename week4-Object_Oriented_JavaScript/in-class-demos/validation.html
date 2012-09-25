@@ -1,0 +1,24 @@
+<script>
+
+var validation = {
+	isEmpty: function(val) {
+		val = String(val);
+		if (val.length > 2) {
+			return true;
+		} else {
+			return false;
+		}
+	},
+	checkEmail: function(email) {
+		if (email.indexOf('@') > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+};
+
+console.log(validation.isEmpty("John"));
+console.log(validation.checkEmail('dtang@usc.edu'));
+console.log(validation.checkEmail('dtangusc.edu'));
+</script>

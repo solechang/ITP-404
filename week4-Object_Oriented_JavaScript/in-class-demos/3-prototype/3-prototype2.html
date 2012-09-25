@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>jQuery example</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	
+<div class="contact" id="david-tang">
+	<img src="http://placehold.it/150x150">
+	<div class="info">
+		<h3>David Tang</h3>
+		<p class="phone">123-456-7890</p>
+		<p class="email">dtang@usc.edu</p>
+		<p>
+			<a href="#" class="favorite">Add to Favorites</a>
+		</p>
+	</div>
+</div>
+<div class="contact" id="john-doe">
+	<img src="http://placehold.it/150x150">
+	<div class="info">
+		<h3>John Doe</h3>
+		<p class="phone">100-400-7000</p>
+		<p class="email">doe@usc.edu</p>
+		<p>
+			<a href="#" class="favorite">Add to Favorites</a>
+		</p>
+	</div>
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="Contact.js"></script>
+<script>
+	(function() {
+		var dt = new AddressBook.Contact({
+			el: '#david-tang'
+		});
+
+		var jd = new AddressBook.Contact({
+			el: '#john-doe'
+		});
+	})();
+</script>
+
+</body>
+</html>
+
