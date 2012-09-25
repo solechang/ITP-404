@@ -18,19 +18,18 @@
 
 A list of common google.map constructor functions:
 
-* google.maps.Map()
-* google.maps.Marker()
-* google.maps.LatLng()
-* google.maps.InfoWindow(obj)
+* [google.maps.Map()](https://developers.google.com/maps/documentation/javascript/reference#Map)
+* [google.maps.Marker()](https://developers.google.com/maps/documentation/javascript/reference#Marker)
+* [google.maps.LatLng()](https://developers.google.com/maps/documentation/javascript/reference#LatLng)
+* [google.maps.InfoWindow(obj)](https://developers.google.com/maps/documentation/javascript/reference#InfoWindow)
 	* obj.content will be the content inside the info window 
-* google.maps.Geocoder()
+* [google.maps.Geocoder()](https://developers.google.com/maps/documentation/javascript/reference#Geocoder)
 	* geocode(obj, cb fn)
 		* obj.address can be an address
 		* returns a an object w the lat/lng 
 
 Map object methods:
-* google.maps.event.addListener(map, 'click', fn(event))
-* 
+* [google.maps.event.addListener(map, 'click', fn(event))](https://developers.google.com/maps/documentation/javascript/reference#MapsEventListener)
 
 ##Geolocation
 
@@ -99,10 +98,18 @@ The _options_ object is optional in both methods. Here is a list of properties y
 * [MDN navigator.geolocation _(reference)_](https://developer.mozilla.org/en-US/docs/Using_geolocation)
 * [Meta viewport tag _(optional)_](http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag/)
 
-##Assignment2 - Google Maps and Geolocation
+##Assignment 2 - Google Maps and Geolocation
 
-To start, I want you to create a page with a Google Map. Once the map is loaded, I want you to use the geolocation API to plot a map marker on the Google map for the user's current location.
+To start, I want you to create a page with a Google Map loaded onto it. 
 
-Using feature detection, if the geolocation property is not available, I would like a message displayed at the top of the page that says "Geolocation is not suppored in this browser". The page should NOT break if geolocation is not supported. Instead, I should just see the message stated previously.
+Using feature detection, detect if the geolocation feature is supported in your browser. If the geolocation property is not available, I would like a message displayed at the top of the page that says "Geolocation is not suppored in this browser". The page should NOT break if geolocation is not supported, meaning I shouldn't see any errors in the console. Instead, I should just see the message stated previously.
 
-When you are finished, push your assignment into a new repository on GitHub and call the repository: ITP404:Assignment2-GoogleMaps-and-Geolocation
+Through the Geolocation API, I want you to fetch the current latitude and longitude and plot a map marker on the Google map for the current location.
+
+To get you to explore the API documentation a bit, I would also like you to use a custom image for the map marker of the current location. Here is an image you can use to represent the user's current location.
+
+[http://www.google.com/gmm/images/blue_dot_circle.png](http://www.google.com/gmm/images/blue_dot_circle.png)
+
+Lastly, using google.maps.Geocoder(), reverse Geocode the current location to find the address. The result of the the geocode() method will contain several different objects that match the current coordinate location. Just pick the first object in the result set. Create an InfoWindow() that contains the address. When the user clicks on the map marker, the InfoWindow should open and I can see the address.
+
+When you are finished, push your assignment into a new repository on GitHub and call the repository: ITP404:Assignment-GoogleMaps-and-Geolocation
