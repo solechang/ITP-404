@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion solution</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="accordion">
+	<div class="label">Label 1</div>
+	<div class="content">This is some content for label 1</div>
+	<div class="label">Label 2</div>
+	<div class="content">This is some content for label 2</div>
+	<div class="label">Label 3</div>
+	<div class="content">This is some content for label 3</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	// hide all div.content panels and show the first one. Also apply the 'active' class to the first div.label element
+	$('.accordion .content').hide().eq(0).show().prev('.label').addClass('active');
+	$('.label').on('click', function() {
+		var timeout = 200;
+		var $this = $(this);
+
+		// only slide down next content panel if it is hidden. In other words, if it is already showing, dont do anything
+		if ($this.next().css('display') === 'none') {
+			// Hide all div.content elements & show the div.content element next to the label that was clicked
+			$('.content').slideUp(timeout);
+			$this.next().slideDown(timeout);
+
+			// Remove the 'active' class from all div.label elements & apply the 'active' class to the clicked div.label element
+			$('.accordion .active').removeClass('active');
+			$this.addClass('active');
+		}
+	});
+</script>
+
+</body>
+</html>
