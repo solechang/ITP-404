@@ -4,7 +4,7 @@
 * Installation
 * variables
 * echo
-* concatonation
+* concatenation
 * double quoted strings vs single quoted strings
 * Arrays
 	* indexed
@@ -47,10 +47,16 @@ Variables being with a dollar sign.
 	$name = 'David Tang';
 ```
 
-###Concatonation
-Concatonation accomplished with a period, similar to + in JavaScript
+###Concatenation
+concatenation accomplished with a period, similar to + in JavaScript
 ```php
 	$hello = 'Hi, my name is ' . $name;
+```
+
+Alternatively, you can use variables in double quoted strings and they will be interpreted.
+
+```php
+	$hello = "Hi, my name is $name";
 ```
 
 ###Echo
