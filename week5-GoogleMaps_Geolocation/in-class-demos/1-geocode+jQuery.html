@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Google Maps Basic</title>
+	<style> #map { height: 400px; width:900px; margin:0 auto;} </style>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+
+<div style="margin:10px; text-align:center;">
+	<input type="text" id="search-term" style="width:300px;" />
+	<input type="button" id="search" value="search" />
+</div>
+<div id="map"></div>
+<div style="margin:10px; text-align:center;">
+	Lat: <input type="text" id="lat" />
+	Long: <input type="text" id="lng" />
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+(function() {
+	var points = {
+		vegas: [36.05178307933835, -115.17840751953122]
+	};
+
+	var vegas = new google.maps.LatLng(points.vegas[0], points.vegas[1]);
+
+	var myOptions = {
+		zoom: 5,
+		center: vegas,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+
+	var map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+	var marker = new google.maps.Marker({
+		position: vegas,
+		title: 'Las Vegas'
+	});
+
+	marker.setMap(map);
+
+	var infowindow = new google.maps.InfoWindow({
+		content: 'Vegas baby!'
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map, marker);
+	});
+
+	$('#search').on('click', function() {
+		var searchTerm = $('#search-term').val();
+		var geocoder = new google.maps.Geocoder();
+		var param1 = {
+			address: searchTerm
+		};
+
+		geocoder.geocode(param1, function(results, status) {
+			console.log(results);
+			var latlng = results[0].geometry.location;
+			console.log(latlng, status);
+
+			var marker = new google.maps.Marker({
+				position: latlng,
+				title: searchTerm
+			});
+
+			marker.setMap(map);
+		});		
+	});
+
+
+})();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
