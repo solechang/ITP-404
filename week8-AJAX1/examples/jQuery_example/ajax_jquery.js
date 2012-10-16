@@ -1,6 +1,4 @@
-//AJAX via jQuery
-
-var ajax = function() {
+$('#some-button').on('click', function() {
 	$.ajax({
 		url: 'example3.php',
 		type: 'GET',
@@ -12,4 +10,4 @@ var ajax = function() {
 			$('#ajaxResponse').html(msg);
 		}
 	});
-}
+});

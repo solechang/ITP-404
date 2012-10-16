@@ -44,6 +44,19 @@
 * Asynchronous means that you can make requests to the server without making the user wait around for a response
 * XML is sometimes used as the format for data being transferred from server to client . A lot of times dynamic templates are returned (server-side generated HTML) or JSON data.
 
+
+###Raw AJAX
+* __onreadystatechange__	stores a function (or the name of a function) to be called automatically each time the __readyState__ property changes
+* __readyState__	holds the status of the XMLHttpRequest. Changes from 0 to 4: 
+	* 0: request not initialized 
+	* 1: server connection established
+	* 2: request received 
+	* 3: processing request 
+	* 4: request finished and response is ready
+* __status__:	200: "OK", 404: Page not found
+* __responseText__ property holds the response data as a string
+
+
 ###jQuery's AJAX method
 
 ```js
