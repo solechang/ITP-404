@@ -2,50 +2,40 @@
 
 ###Overview
 * AJAX Overview
-	* What is AJAX? 
-	* Examples of real world AJAX applications
-	* Why is AJAX useful? 
-	* The term "AJAX"
+	* What is AJAX?
 		* __A__synchronouse __J__avaScript __a__nd __X__ML
 		* Asynchronous requests vs synchronous requests
 		* Response formats
-			* HTML
-			* XML
-			* JSON
-	* Same origin policy
+		* Examples of real world AJAX applications
+		* Why is AJAX useful? 
 * AJAX in plain JS
-	* XMLHttpRequest, ActiveXObject
-	* try catch blocks 
+	* XMLHttpRequest constructor
+	* Same origin policy
 	* AJAX loaders 
 * AJAX with jQuery
 	* static methods on constructors 
 	* event listeners on AJAXed content using event delegation
 	 
-###What is AJAX?
+##What is AJAX?
 * AJAX is not a programming language
 * AJAX is a __technique using JavaScript__ that allows for updating parts of a web page without reloading the whole page. AJAX is a way to interact and exchange data with the server through JavaScript
-
-####Traditional vs. AJAX driven web pages
-* Gmail (basic HTML site vs AJAX version)
+* AJAX stands for Asynchronous JavaScript and XML
+* Asynchronous means that you can make requests to the server without making the user wait around for a response. Essentially, the browser is not locked and it can continue doing other things (like processing other JS).
+* XML used to be the defacto format for data being transferred. Responses can be whatever format you like. A lot of times, dynamic templates are returned (server-side generated HTML) or JSON data.
 
 ####Examples of AJAX
+* Google Search autosuggestions
 * posting on a Facebook wall
 * panning Google maps
-* Switching views in Gmail (versus Gmail without JS)
+* Gmail (versus Gmail without JS)
 
-
-###Why is AJAX useful?
+####Why is AJAX useful?
 * More responsive interface. User feels that changes are instantaneous
 * Reduced waiting time
 * Less traffic
 
-###The term "AJAX"
-* AJAX stands for Asynchronous JavaScript and XML
-* Asynchronous means that you can make requests to the server without making the user wait around for a response
-* XML is sometimes used as the format for data being transferred from server to client . A lot of times dynamic templates are returned (server-side generated HTML) or JSON data.
-
-
-###Raw AJAX
+##AJAX with Vanilla JavaScript
+* create an XHR object using XMLHttpRequest constructor
 * __onreadystatechange__	stores a function (or the name of a function) to be called automatically each time the __readyState__ property changes
 * __readyState__	holds the status of the XMLHttpRequest. Changes from 0 to 4: 
 	* 0: request not initialized 
@@ -56,8 +46,9 @@
 * __status__:	200: "OK", 404: Page not found
 * __responseText__ property holds the response data as a string
 
+See example folder for a full working demo.
 
-###jQuery's AJAX method
+##jQuery's AJAX method
 
 ```js
 	$.ajax({
@@ -73,11 +64,11 @@
 	});
 ```
 
-###References
+##References
 * [JavaScript Error Objects](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Error)
 * [jQuery ajax method](http://api.jquery.com/jQuery.ajax/)
 
-###Assignment
+##Assignment
 For this assignment, I want you to take the files supplied in the homework-starter folder, navigate to the index.html page, and make that page pull in tweets via AJAX (either raw JS or jQuery is fine) when you click on any one of the anchors. The respective twitter username is stored on the id attribute of each anchor, so you'll need to pull that out before making the AJAX request. Also, you will neex to modify twitter-JSON.php and functions.php to accept data from your AJAX request, namely the twitter username. Your AJAX request will be made to the twitter-JSON.php file.
 
 ####Requirements
