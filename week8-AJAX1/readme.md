@@ -1,0 +1,75 @@
+##AJAX - Part 1
+
+###Overview
+* AJAX Overview
+	* What is AJAX? 
+	* Examples of real world AJAX applications
+	* Why is AJAX useful? 
+	* The term "AJAX"
+		* __A__synchronouse __J__avaScript __a__nd __X__ML
+		* Asynchronous requests vs synchronous requests
+		* Response formats
+			* HTML
+			* XML
+			* JSON
+	* Same origin policy
+* AJAX in plain JS
+	* XMLHttpRequest, ActiveXObject
+	* try catch blocks 
+	* AJAX loaders 
+* AJAX with jQuery
+	* static methods on constructors 
+	* event listeners on AJAXed content using event delegation
+	 
+###What is AJAX?
+* AJAX is not a programming language
+* AJAX is a __technique using JavaScript__ that allows for updating parts of a web page without reloading the whole page. AJAX is a way to interact and exchange data with the server through JavaScript
+
+####Traditional vs. AJAX driven web pages
+* Gmail (basic HTML site vs AJAX version)
+
+####Examples of AJAX
+* posting on a Facebook wall
+* panning Google maps
+* Switching views in Gmail (versus Gmail without JS)
+
+
+###Why is AJAX useful?
+* More responsive interface. User feels that changes are instantaneous
+* Reduced waiting time
+* Less traffic
+
+###The term "AJAX"
+* AJAX stands for Asynchronous JavaScript and XML
+* Asynchronous means that you can make requests to the server without making the user wait around for a response
+* XML is sometimes used as the format for data being transferred from server to client . A lot of times dynamic templates are returned (server-side generated HTML) or JSON data.
+
+###jQuery's AJAX method
+
+```js
+	$.ajax({
+		url: 'some/path/to/script.php',
+		data: {},
+		type: 'GET',
+		success: function() {
+		
+		},
+		error: function() {
+		
+		}
+	});
+```
+
+###References
+* [JavaScript Error Objects](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Error)
+* [jQuery ajax method](http://api.jquery.com/jQuery.ajax/)
+
+###Assignment
+For this assignment, I want you to take the files supplied in the homework-starter folder, navigate to the index.html page, and make that page pull in tweets via AJAX (either raw JS or jQuery is fine) when you click on any one of the anchors. The respective twitter username is stored on the id attribute of each anchor, so you'll need to pull that out before making the AJAX request. Also, you will neex to modify twitter-JSON.php and functions.php to accept data from your AJAX request, namely the twitter username. Your AJAX request will be made to the twitter-JSON.php file.
+
+####Requirements
+* Page pulls in tweets via AJAX for a user when the corresponding anchor is clicked
+* Before the AJAX request is sent, an AJAX loader is placed in div#tweets
+* Lastly, when you click on each <li> within the list of tweets that is returned, I want you to add a class of 'read' to that list-item. I have already created this class in the attached stylesheet.
+
+Upload your assignment to a NEW repository called ITP404-AJAX1
