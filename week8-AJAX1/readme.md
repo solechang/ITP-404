@@ -65,15 +65,15 @@ See example folder for a full working demo.
 ```
 
 ##References
-* [JavaScript Error Objects](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Error)
 * [jQuery ajax method](http://api.jquery.com/jQuery.ajax/)
+* [AJAX loaders](http://ajaxload.info/)
 
 ##Assignment
 For this assignment, I want you to take the files supplied in the homework-starter folder, navigate to the index.html page, and make that page pull in tweets via AJAX (either raw JS or jQuery is fine) when you click on any one of the anchors. The respective twitter username is stored on the id attribute of each anchor, so you'll need to pull that out before making the AJAX request. Also, you will neex to modify twitter-JSON.php and functions.php to accept data from your AJAX request, namely the twitter username. Your AJAX request will be made to the twitter-JSON.php file.
 
 ####Requirements
 * Page pulls in tweets via AJAX for a user when the corresponding anchor is clicked
-* Before the AJAX request is sent, an AJAX loader is placed in div#tweets
-* Lastly, when you click on each <li> within the list of tweets that is returned, I want you to add a class of 'read' to that list-item. I have already created this class in the attached stylesheet.
+* Before the AJAX request is sent, an AJAX loader image is placed in div#tweets. I have provided the image for you, or you can visit [ajaxload.info](http://ajaxload.info/) for another loader image.
+* Lastly, when you click on each list item element within the list of tweets that is returned, I want you to add a class of 'read' to that list-item. I have already created this class in the attached stylesheet.
 
 Upload your assignment to a NEW repository called ITP404-AJAX1
