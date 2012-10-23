@@ -80,6 +80,8 @@ Again, this can get kind of long and hard to maintain with complicated HTML chun
 	* Underscore 
 	* Mustache
 
+Client side templates can be created by placing HTML fragments within a script tag with a __type="template"__ as an attribute. Scripts without a type specified default to "text/javascript". With a type attribute set to 'template' (or anything the browser can't interpret), the browser will not recognize this type and won't evaulate what is inside the script tag as Javascript. This makes for a good place to store HTML templates. Note that you cannot place HTML templates inside external script references. They must be internal script blocks. Other common script type attribute values for templates include "text/template", 'handlebars/template', etc.
+
 ###Facebook Query Language
 Facebook offers a SQL like style for accessing data in the Graph API. Some requests don't require authentication via an access token.
 
@@ -110,7 +112,7 @@ For this assignment, I want you to run a similar FQL query to the example above,
 
 You can choose whatever pages you'd like, but there should be at least 4 pages in the result set and the pages should be related in some way. For example, they call be soda companies, restaurants of the same cuisine, theme parks, etc.
 
-__Hint__: Look at the __page__ table documentation for the column fan_count. The FQL clause to order results is ORDER BY just like in SQL.
+__Hint__: Look at the __page__ table documentation for the field fan_count. The FQL clause to order results is: ORDER BY _field-name_, just like in SQL.
 
 Render each page data object on your page using one of the client-side templating libraries. Each page data rendering should display the following data at a minimum:
 
@@ -121,6 +123,13 @@ Render each page data object on your page using one of the client-side templatin
 * Link to the Facebook page
 
 Please style this assignment a little bit to easily differentiate each of the rendered page sections.
+
+Lastly, within each rendered page section, I want you to create an element with the text "More Info". When "More Info" is clicked, it toggles another section containing more data about that page. This can be any data you want from the Graph request, but there be other useful details pertaining to that page.
+
+__Hint:__ You will need to use event delegation to bind event listeners to the generated HTML.
+
+__Extra:__
+If you want an extra challenge, sum up the fan_count field for each page and display this number at the top of the page in another client-side template with a label like "Total Fans". This step is not required.
 
 Push this assignment up to GitHub and call the repository: ITP404-JSONP-FQL
 
