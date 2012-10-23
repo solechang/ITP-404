@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	
+<div id="page-info"></div>
+
+
+<script type="template" id="page-template">
+	<div class="page">
+		<h1>{{ name }}</h1>
+		<p>{{ about }}</p>
+		<p>{{ description }}</p>
+		<a href="{{ link }}" target="_blank">
+			Likes: {{ likes }}
+		</a>
+	</div>
+</script>
+
+<script src="handlebars-1.0.rc.1.js"></script>
+<script>
+	// this function must be accessible via the global scope
+	// so that when the script is appended to the page, it can use our predefined function
+	// to process the JSON data
+	var myFunction = function(jsonData) {
+		console.log(jsonData);
+
+		var templateString = document.getElementById('page-template').innerHTML;
+		var templateFunction = Handlebars.compile(templateString);
+		var html = templateFunction(jsonData);
+
+		document.getElementById('page-info').innerHTML = html;
+	};
+
+
+	(function() {
+		var script = document.createElement('script');
+		script.src = "https://graph.facebook.com/cocacola?callback=myFunction";
+		document.getElementsByTagName('head')[0].appendChild(script);
+	})();
+</script>
+
+</body>
+</html>
