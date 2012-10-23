@@ -1,4 +1,4 @@
-##JSONP, Client-side Templating
+##JSONP, Client-side Templating, Facebook Graph API & Facebook Query Language (FQL)
 
 ###Overview
 * Review of Asynchronous Requests
@@ -101,6 +101,8 @@ To pass an FQL query to the endpoint, you assign the FQL query to a query string
 
 _http://graph.facebook.com/fql?q=SELECT page_id, name, username, fan_count, pic_cover, pic_square, page_url FROM page WHERE username = 'coca-cola' OR username = 'pepsi'_
 
+FQL queries also have a JSONP endpoint! The query string parameter is named 'callback'.
+
 ###References
 * [Facebook Graph API Documentation](http://graph.facebook.com)
 * [Facebook Query Language Documentation - FQL](https://developers.facebook.com/docs/reference/fql/)
@@ -108,13 +110,19 @@ _http://graph.facebook.com/fql?q=SELECT page_id, name, username, fan_count, pic_
 
 
 ###Assignment
-For this assignment, I want you to run a similar FQL query to the example above, but this time I want you to pull the total number of likes for each page and order the results by the total number of likes.
+For this assignment, I want you to make a JSONP request to Facebook's Graph API using FQL. I want you to run an FQL query similar to the example above, but this time I want you to pull the total number of likes for each page and order the results by the total number of likes.
 
-You can choose whatever pages you'd like, but there should be at least 4 pages in the result set and the pages should be related in some way. For example, they call be soda companies, restaurants of the same cuisine, theme parks, etc.
+__Hint__: Look at the __page__ table documentation for the field _fan_count_. This contains the total number of likes for a page. The FQL clause to order results is ORDER BY, just like in SQL.
 
-__Hint__: Look at the __page__ table documentation for the field fan_count. The FQL clause to order results is: ORDER BY _field-name_, just like in SQL.
+```sql
+	ORDER BY field-name
+```
 
-Render each page data object on your page using one of the client-side templating libraries. Each page data rendering should display the following data at a minimum:
+DO NOT ORDER THE RESULT SET IN YOUR JAVASCRIPT. Let your FQL query handle the ordering of the returned result set.
+
+You can choose whatever pages you'd like, but there should be at least 4 pages in the result set and the pages should be related in some way. For example, they can be soda companies, restaurants of the same cuisine, theme parks, related companies, etc.
+
+Render each Facebook Page data object on your webpage using one of the client-side templating libraries. Each Facebook Page rendering should display the following data at a minimum:
 
 * Fan count (total number of likes) with a label like "Total Likes"
 * Page name
@@ -124,7 +132,7 @@ Render each page data object on your page using one of the client-side templatin
 
 Please style this assignment a little bit to easily differentiate each of the rendered page sections.
 
-Lastly, within each rendered page section, I want you to create an element with the text "More Info". When "More Info" is clicked, it toggles another section containing more data about that page. This can be any data you want from the Graph request, but there be other useful details pertaining to that page.
+Lastly, within each rendered Facebook Page section, I want you to create an element with the text "More Info". When "More Info" is clicked, it toggles another section containing more data about that Facebook Page. This can be any data you want from the Graph FQL request, but there should be other useful details pertaining to that Facebook Page.
 
 __Hint:__ You will need to use event delegation to bind event listeners to the generated HTML.
 
