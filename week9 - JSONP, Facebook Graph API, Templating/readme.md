@@ -97,13 +97,30 @@ The endpoint for FQL queries is __http://graph.facebook.com/fql__
 
 To pass an FQL query to the endpoint, you assign the FQL query to a query string parameter __q__. For example, the FQL endpoint for the Coca Cola and Pepsi FQL query would be:
 
-[http://graph.facebook.com/fql?q=SELECT page_id, name, username, fan_count, pic_cover, pic_square, page_url 
-FROM page 
-WHERE username = 'coca-cola' OR username = 'pepsi'](http://graph.facebook.com/fql?q=SELECT page_id, name, username, fan_count, pic_cover, pic_square, page_url 
-FROM page 
-WHERE username = 'coca-cola' OR username = 'pepsi')
+_http://graph.facebook.com/fql?q=SELECT page_id, name, username, fan_count, pic_cover, pic_square, page_url FROM page WHERE username = 'coca-cola' OR username = 'pepsi'_
 
 ###References
 * [Facebook Graph API Documentation](http://graph.facebook.com)
 * [Facebook Query Language Documentation - FQL](https://developers.facebook.com/docs/reference/fql/)
 * [FQL Explorer Console](https://developers.facebook.com/tools/explorer)
+
+
+###Assignment
+For this assignment, I want you to run a similar FQL query to the example above, but this time I want you to pull the total number of likes for each page and order the results by the total number of likes.
+
+You can choose whatever pages you'd like, but there should be at least 4 pages in the result set and the pages should be related in some way. For example, they call be soda companies, restaurants of the same cuisine, theme parks, etc.
+
+__Hint__: Look at the __page__ table documentation for the column fan_count. The FQL clause to order results is ORDER BY just like in SQL.
+
+Render each page data object on your page using one of the client-side templating libraries. Each page data rendering should display the following data at a minimum:
+
+* Fan count (total number of likes) with a label like "Total Likes"
+* Page name
+* Page description / about
+* Page image
+* Link to the Facebook page
+
+Please style this assignment a little bit to easily differentiate each of the rendered page sections.
+
+Push this assignment up to GitHub and call the repository: ITP404-JSONP-FQL
+
