@@ -90,7 +90,7 @@ Classes can inherit methods and properties from other classes using the __exends
 ```php
 	class WebDeveloper extends Person {
 		public function code() {
-			$this->name . ' likes to code for the web.';
+			echo $this->name . ' likes to code for the web.';
 		}
 	}
 	
@@ -107,7 +107,7 @@ Sometimes you want to limit the visibility of properties or methods. For example
 
 ###Static properties and methods
 
-Methods or properties can be declared as __static__ which essentially means that they can be accessed without instantiating the class. Think of it like an object literal in JavaScript, where the object has properties and methods, but you don't create an instance from that object literal. When would you want to use static methods or properties? One example would be if you had a Utility class that contained a bunch of string manipulation methods, but there really was no need to create instances. For example, one method might trim off white space on either end of a string and another method might replace all spaces with dashes. In this case, we could create a StringUtility class with several static methods.
+Methods or properties can be declared as __static__ which essentially means that they can be accessed without instantiating the class. Think of it like an object literal in JavaScript, where the object has properties and methods, but you don't create an instance from that object literal. When would you want to use static methods or properties? One example would be if you wanted to create a String Utility class that contained several string manipulation methods, but there really was no need to create independent instances but we still wanted to group these functions (or methods) into a class. For example, one method might trim off white space on either end of a string and another method might replace all spaces with dashes. In this case, we could create a StringUtility class with several static methods.
 
 ```php
 	class StringUtility {
@@ -121,12 +121,37 @@ Methods or properties can be declared as __static__ which essentially means that
 		}
 	}
 	
-	$someString = "   This is a string with a lot of extra white space  .  "
+	$someString = "   This is a string with a lot of extra white space  .  ";
 	$str1 = StringUtility::trim($someString); // "This is a string with a lot of extra white space  ."
 	$str2 = StringUtility::remove_spaces($someString); // "---This-is-a-string-with-a-lot-of-extra-white-space--.--"
 ```
+Static properties and methods can be accessed by using the class name, the double colon (called the scope resolution operator), and the static property or method name. 
 
-Static properties and methods can be accessed by using the class name, the double colon (called the scope resolution operator), and the static property or method name. One of the major benefits to using static properties is that they keep their stored values for the duration of the script.
+One thing to note is that classes with static members can also have instance methods. Here is an example that uses both static and instance members:
+
+```php
+	class Database {
+		protected static $connection = null;
+		
+		public function __construct($user, $pw, $host, $db) {
+			if (!static::$connection) {
+				static::$connection = mysqli_connect($host, $user, $pw, $db);
+			}
+		}
+		
+		public function query($sql) {
+			$result = mysqli_query(static::$connection, $sql);
+			return $result;
+		}
+	}
+	
+	$db = new Database('root', '', 'localhost', 'my-database');
+	$results = $db->query('SELECT * FROM my-table');
+```
+ 
+One of the major benefits to using static properties is that they keep their stored values for the duration of the script. When would you want to do this? Say you created a Database class that made interfacing with a database a little easier. Creating a database connection is an expensive operation, so typically you only want to create 1 connection, and run multiple queries off of that 1 connection instead of creating a new connection for different queries. This way your site will run faster. We can store our database connection as a static property, and when multiple Database objects are created from that Database class, they will all use the same connection.
+
+In the example above, we are creating a static $connection property initialized to _null_. The first time we create a Database object, the code that tests if the $connection has been created will evaluate to false (null is a falsy value) and so the code in the if-statement will execute and the connection will be created. Every subsequent Database object that is created will then test if the static $connection property exists (it will exist), and reuse that $connection static property since the if-statement inside the constructor will evaluate to false.
 
 ###Resources
 * [Object Oriented PHP for beginners](http://net.tutsplus.com/tutorials/php/object-oriented-php-for-beginners/)
