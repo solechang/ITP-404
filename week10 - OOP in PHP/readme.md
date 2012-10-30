@@ -101,9 +101,18 @@ Classes can inherit methods and properties from other classes using the __exends
 
 ###Access Modifiers
 
-Up until this point all our properties and methods have been made public. That is, public properties and methods can be accessed inside our class, inside child classes, or even outside our class.
+Up until this point all our properties and methods have been made public. That is, public properties and methods can be accessed from within our class (such as from other methods), from within child classes, or even from outside our class.
 
-Sometimes you want to limit the visibility of properties or methods. For example, say you had a Flickr API wrapper class. To work with the Flickr API, you need to have an API key. However, once you set it as a class property, there is no need to modify it or access it, but class methods should still have access it. In this case, you can make the API key __protected__ or __private__. When a property or method is either protected or private, it cannot be accessed from outside the class. If a property or method is protected, it can only be accessed from within the class itself or from child classes or "sub-classes". Private members (properties or methods) can only be acccessed from within the class and NOT outside the class or from subclassess.
+Sometimes you want to limit the visibility of properties or methods. For example, say you have a Flickr API wrapper class to hide the complexity/details of Flickr's web service. To work with the Flickr API, you need to have an API key. Once you set it as a class property, there is no need to modify it or access it, but class methods should still have access it to make requests to Flickr. You only want other developers who are using this class to be able to set the API key via a constructor method, but never be able to change it from the code they write outside of the class. 
+
+In this case, you can make the API key __protected__ or __private__. When a property or method is either protected or private, it cannot be accessed from outside the class. If a property or method is protected, it can only be accessed from within the class itself or from child classes, also known as "sub-classes". Private members (properties or methods) can only be acccessed from within the class that contains the private member and NOT outside the class or from subclassess.
+
+A good use for protected and private members include:
+
+* database connections
+* api keys (sometimes there are more than one key)
+* user credentials
+* or even just internal properties and utility methods that are needed by other methods but don't need to be exposed as part of the public interface
 
 ###Static properties and methods
 
