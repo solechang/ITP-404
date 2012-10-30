@@ -141,13 +141,18 @@ One thing to note is that classes with static members can also have instance met
 		
 		public function query($sql) {
 			$result = mysqli_query(static::$connection, $sql);
-			return $result;
+			$rows = mysqli_fetch_assoc($result);
+        	return $rows;
 		}
 	}
 	
 	$db = new Database('root', '', 'localhost', 'my-database');
 	$results = $db->query('SELECT * FROM my-table');
 ```
+
+__On XAMPP, the default password is a blank string__
+
+__On MAMP, the default password is 'root'__
  
 One of the major benefits to using static properties is that they keep their stored values for the duration of the script. When would you want to do this? Say you created a Database class that made interfacing with a database a little easier. Creating a database connection is an expensive operation, so typically you only want to create 1 connection, and run multiple queries off of that 1 connection instead of creating a new connection for different queries. This way your site will run faster. We can store our database connection as a static property, and when multiple Database objects are created from that Database class, they will all use the same connection.
 
