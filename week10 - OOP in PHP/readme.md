@@ -15,6 +15,8 @@
 * Static properties and methods
 * Midterm Project
 
+See folder __flickr-api-class__ for a full example with public, protected, and private members and inheritance.
+
 ###Objects vs Classes
 
 A class is like a blueprint for a house whereas an object is like the actual house created based on the blueprint. Sometimes developers interchange the terms class and object even though they are different things. Essentially, classes form the structure (properties and methods) for objects. More than one object can be created from a class at the same time, and each object will be independent of the other objects.
@@ -50,7 +52,7 @@ Here is an example of a Person class with a few properties and methods:
 	$david->greeting(); // Hello, my name is David
 ```
 
-Inside class methods, the $this variable can be used to reference itself, or the object that you are calling the method on. This is similar to the use of __this__ in other OO languages like Java.
+Inside class methods, the $this variable can be used to reference itself (the object that you are calling the method on). This is similar to the use of __this__ in other object oriented languages like Java, and similar to the use of the keyword __this__ inside constructor functions in JavaScript.
 
 
 ###Magic Methods
