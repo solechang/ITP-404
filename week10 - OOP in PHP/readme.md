@@ -15,7 +15,7 @@
 * Static properties and methods
 * Midterm Project
 
-See folder __flickr-api-class__ for a full example with public, protected, and private members and inheritance.
+See folder __flickr-api-class__ for a full example using web services with public, protected, and private members and inheritance.
 
 ###Objects vs Classes
 
@@ -160,6 +160,7 @@ In the example above, we are creating a static $connection property initialized 
 
 ###Resources
 * [Object Oriented PHP for beginners](http://net.tutsplus.com/tutorials/php/object-oriented-php-for-beginners/)
+* [mysqli overview](http://php.net/manual/en/mysqli.overview.php)
 * [Book: PHP Object Oriented Solutions by David Powers](http://www.amazon.com/PHP-Object-Oriented-Solutions-David-Powers/dp/1430210117/ref=sr_1_1?ie=UTF8&qid=1351574545&sr=8-1&keywords=object+oriented+solutions)
 
 ###Midterm Project
