@@ -8,7 +8,7 @@
 * Why MVC? A spaghetti coded web application example
 * The MVC Architectural Pattern
 	* Models, Views, Controllers
-	* Routes 
+* MVC Frameworks
 * Why Laravel?
 * Flickr Search App Example
 	* Laravel installation & configuration
@@ -20,11 +20,13 @@
 
 ###MVC
 
-The Model View Controller pattern (MVC), simply put, is a way to structure your website or application into 3 distinct parts. Models are typically for handling your database activity, Views are for what the user sees, and Controllers act as the glue between Models and Views. Controllers intercept HTTP requests, load Model data, and pass that data along to Views.
+The Model View Controller pattern (MVC), simply put, is a way to structure your website or application into 3 distinct parts. Models are typically for handling your database activity, Views are for what the user sees, and Controllers act as the glue between Models and Views. Controllers intercept HTTP requests, load Model data, and pass that data along to Views. Controllers then respond back to the HTTP request with the final View. (See diagram below)
 
-Having your application organized this way makes it much more maintainable in the long run because it can help prevent 'spaghetti coded' applications. Spaghetti coded applications occur when your business logic and data are mixed in with all your presentation code.
+Having your application organized this way makes it much more maintainable because it can help prevent 'spaghetti coded' applications. Spaghetti coded applications occur when your business logic and data are mixed in with all your presentation code (the Views).
 
-![image](mvc.jpg)
+Additionally, by separating concerns, Frontend publishers/developers can work primary with the Views while the backend developers primarily work with Models and Controllers. In a team setting, this pattern makes it easy to separate files of the project for each role. Frontend people don't have to look at a bunch of server-side code, and backend people don't have to look at frontend-code.
+
+![image](https://raw.github.com/skaterdav85/ITP-404/master/week11-%20MVC%20pt1/mvc.jpg)
 
 
 ###Laravel Installation
