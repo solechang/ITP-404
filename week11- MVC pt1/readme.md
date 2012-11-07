@@ -153,7 +153,7 @@ __About Route and View__
 
 For this assignment, I want you to create a Twitter search application similar to this Flickr search application using the Laravel MVC Framework.
 
-When I navigate to __localhost/twitterapp/public__, I should be presented with a form so that I can type in someone's Twitter username.
+When I navigate to __localhost/twitterapp/public/twitter__, I should be presented with a form so that I can type in someone's Twitter username.
 
 When I click on the submit button, it should make a request to a Twitter Controller action method that is responsible for fetching the tweets and passing that data along to a view. This Controller will be responsible for utilizing a Twitter __library__ class that you create, which will handle fetching the tweets from the Twitter web service for a given username.
 
