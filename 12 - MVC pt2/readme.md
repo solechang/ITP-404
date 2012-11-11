@@ -70,3 +70,22 @@ __Note:__ I purposely left out the href value for you to figure out.
 When each link is clicked, it should send you to the results page that lists out all the tweets for that user. You can easily achieve this by linking each twitter user to the twitter results action used for the search form, and by dynamically creating the query string yourself which will contain the Twitter username.
 
 Upload this assignment to a __SEPARATE__ repository on GitHub called ITP404:MVC.
+
+###This was your last assignment! =)
+
+
+
+###Quiz 2 Study Guide
+You will have 20 minutes for this 10 question quiz. You will not have to write any code. Study the theory for the list of topics below. All questions are fill in the blank, multiple choice, or short answer.
+
+* MVC pattern
+* Basic Object Oriented Programming concepts
+	* classes vs objects
+	* instance methods vs static methods
+	* Access modifiers
+* RESTful Web Services
+	* HTTP Verbs and which is the most common?
+	* Web service data response formats
+* AJAX
+* JSONP
+	  
