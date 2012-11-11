@@ -57,7 +57,7 @@ Create a database called itp404-mvc. Create one table called __users__. The __us
 
 Create a form that is displayed at the URL __localhost/twitterapp/public/twitter/add__ This form should have 2 input fields and a submit button. The first input is for the Twitter username and the 2nd input is for the Twitter user's real name. When I click the submit button, it should call an action in the Twitter controller that saves a record to the __users__ table. Insert at least 3 records that are completely filled out.
 
-[This documentation](http://laravel.com/docs/database/fluent#insert) should help you in determining which methods to use to insert data using Fluent.
+[This documentation](http://laravel.com/docs/database/fluent#insert) should help you in determining which methods to use to insert data using Fluent. Your Fluent query should be placed in a Twitter model. Don't write your query in the Controller's action.
 
 Next, go back to the View that you created last week located at the URL __localhost/twitterapp/public/twitter__. On this page below the search form, I want you to display the Twitter usernames / real names that are in the database as a link as shown below: 
 
@@ -67,6 +67,6 @@ Next, go back to the View that you created last week located at the URL __localh
 
 __Note:__ I purposely left out the href value for you to figure out.
 
-When each link is clicked, it should send you to the results page that lists out all the tweets for that user. You can easily achieve this by linking each twitter user to the twitter results page used for the search form, but by dynamically creating the query string yourself.
+When each link is clicked, it should send you to the results page that lists out all the tweets for that user. You can easily achieve this by linking each twitter user to the twitter results action used for the search form, and by dynamically creating the query string yourself which will contain the Twitter username.
 
-Upload this homework to a __SEPARATE__ repository on GitHub called ITP404:MVC
+Upload this assignment to a __SEPARATE__ repository on GitHub called ITP404:MVC.
