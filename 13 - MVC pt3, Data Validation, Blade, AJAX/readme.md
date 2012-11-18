@@ -9,7 +9,11 @@
 
 ##Data Validation
 
-Laravel makes data validation extremely simple with their Validator class.
+Laravel makes data validation extremely simple with their Validator class. You simply call Validator::make($input, $rules) where $input can contain all request data and $rules is an array of validation rules that Laravel supports. It is also worth noting that you can define your own rules if Laravel's provided rules are not exactly what you want.
+
+Although you can validate user input within a controller, it is a good idea to place data validation on your model. I typically like to create a static method on my models called _validate_ that works with the Validator class.
+
+See class demo for a full working example.
 
 [Validator documentation](http://laravel.com/docs/validation)
 
