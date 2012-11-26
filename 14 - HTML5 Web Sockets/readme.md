@@ -1,7 +1,5 @@
 ##HTML5 Web Sockets
 
-###Web Sockets
-
 ####What are Web Sockets?
 Web Sockets are a type of push technology that allow for servers to push data (think of updates) to a page AFTER a page has loaded. 
 
