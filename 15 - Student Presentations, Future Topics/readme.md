@@ -3,7 +3,7 @@
 ###Server-side Frameworks
 * ORM (Object Relational Mapping) Frameworks
 * Unit Testing Frameworks like PHPUnit
-* Node.js, Node frameworks like Express, Using web sockets with Node via Socket.IO 
+* Node.js and how it differs from other server-side languages like PHP, Node frameworks like Express 
 * RESTful Architectures and API design
 
 ###JavaScript
