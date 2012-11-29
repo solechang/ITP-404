@@ -8,6 +8,6 @@
 
 ###JavaScript
 * Publish/Subscribe pattern (Pubsub)
-* Client-side MVC Frameworks (Backbone.js, Angular, Knockout, Ember.js)
+* JavaScript Architecture & Client-side MVC Frameworks (Backbone.js, Angular, Knockout, Ember.js)
 * Script loaders (Require.js) for modular JavaScript
 * JavaScript module patterns & closures
