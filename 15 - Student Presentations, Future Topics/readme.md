@@ -4,6 +4,7 @@
 * ORM (Object Relational Mapping) Frameworks
 * Unit Testing Frameworks like PHPUnit
 * Node.js, Node frameworks like Express, Using web sockets with Node via Socket.IO 
+* RESTful Architectures and API design
 
 ###JavaScript
 * Publish/Subscribe pattern (Pubsub)
