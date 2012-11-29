@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	
+<div id="page-info"></div>
+
+<script>
+	// this function must be accessible via the global scope
+	// so that when the script is appended to the page, it can use our predefined function
+	// to process the JSON data
+	var myFunction = function(jsonData) {
+		console.log(jsonData);
+
+		var about = '<p>' + jsonData.about + '</p>';
+		var checkins = '<p>Checkins: ' + jsonData.checkins + '</p>';
+		var html = about + checkins;
+
+		document.getElementById('page-info').innerHTML = html;
+	};
+
+
+	(function() {
+		var script = document.createElement('script');
+		script.src = "https://graph.facebook.com/cocacola?callback=myFunction";
+		document.getElementsByTagName('head')[0].appendChild(script);
+	})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<script>
+
+var Person = function(name, age) {
+	this.name = name;
+	this.age = age;
+};
+
+Person.prototype = {
+	constructor: Person,
+	sayWussup: function() {
+		console.log('Wussup, Im ' + this.name);
+	},
+	hi: function() {
+		alert('Hi!');
+	},
+	setAge: function(age) {
+		this.age = age;
+	},
+	age: 32
+};
+
+var david = new Person('David Tang', 26);
+//david.age = 26;
+
+console.log(david);
+var john = new Person('John Doe');
+console.log(john);
+
+</script>

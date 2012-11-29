@@ -1,0 +1,27 @@
+<script>
+
+var honda = {};
+
+var Car = function() {
+
+};
+
+Car.prototype = {
+	constructor: Car,
+	drive: function() {
+		console.log("Im driving.");
+	}
+};
+
+var Suv = function(type) {
+	this.type = type;
+};
+
+//Suv.prototype = new Car();
+//Suv.prototype.constructor = Suv;
+
+var davidsCar = new Suv('Honda');
+
+
+
+</script>
